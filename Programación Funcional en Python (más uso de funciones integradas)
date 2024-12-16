@@ -1,0 +1,17 @@
+from functools import reduce  
+
+# Lista de temperaturas en Celsius  
+temperaturas_celsius = [20, 22, 18, 25, 21, 23, 19]  
+
+# Convertir Celsius a Fahrenheit  
+temperaturas_fahrenheit = list(map(lambda c: (c * 9/5) + 32, temperaturas_celsius))  
+
+# Filtrar temperaturas superiores a 70°F  
+temperaturas_altas = list(filter(lambda f: f > 70, temperaturas_fahrenheit))  
+
+# Sumar todas las temperaturas filtradas  
+suma_temperaturas = reduce(lambda x, y: x + y, temperaturas_altas)  
+
+print("Temperaturas en Fahrenheit:", temperaturas_fahrenheit)  
+print("Temperaturas superiores a 70°F:", temperaturas_altas)  
+print("Suma de temperaturas altas:", suma_temperaturas) 
