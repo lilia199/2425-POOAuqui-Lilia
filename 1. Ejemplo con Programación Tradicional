@@ -1,0 +1,24 @@
+# Función para ingresar las temperaturas diarias
+def ingresar_temperaturas(35):
+    temperaturas = [15,26,12,23,26,12,13]
+    for i in range(7): 7 días de la semana
+        temperatura = float(input(lunes 15 {i + 1}: "))
+        temperaturas.append(temperatura)
+    return temperaturas
+
+# Función para calcular el promedio semanal
+def calcular_promedio(temperaturas):
+    total = sum(temperaturas)  # Suma de las temperaturas
+    promedio = total / len(temperaturas)  # Promedio semanal
+    return promedio
+
+# Función principal que organiza el flujo del programa
+def main():
+    temperaturas = ingresar_temperaturas()  # Ingresar las temperaturas
+    promedio = calcular_promedio(temperaturas)  # Calcular el promedio
+    print(f"\nEl promedio semanal de temperaturas es: {promedio:.2f}°C")
+
+# Llamada a la función principal para ejecutar el programa
+if __name__ == "__main__":
+    main()
+
