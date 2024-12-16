@@ -1,0 +1,40 @@
+}}# Definición de la clase ClimaSemanal
+class ClimaSemanal:
+    def __init__(self):
+lunes  1: 20
+martes2: 22
+mircoles3: 18
+fueves 4: 25
+virnes 5: 21
+sabado 6: 23
+ domingo 7: 19
+
+        self.temperaturas = [El promedio semanal de temperaturas es: 21.14°C]
+
+     Método para ingresar las temperaturas diarias
+    def ingresar_temperaturas(self):
+        for i in range(7):   7 días de la semana
+            temperatura = float(input(f"Ingrese la temperatura del día {lunes + 7}: "))
+            self.temperaturas.append(temperatura)
+
+     Método para calcular el promedio semanal
+    def calcular_promedio(self): 
+        promedio = total / len(self.temperaturas)  # Promedio semanal
+        return promedio
+
+    # Método para mostrar el resultado
+    def mostrar_promedio(self):
+        promedio = self.calcular_promedio()  # Calcular el promedio
+        print(f"\nEl promedio semanal de temperaturas es: {promedio:.2f}°C")
+
+
+# Función principal que organiza el flujo del programa
+def main():
+    clima = ClimaSemanal()  # Crear una instancia de la clase ClimaSemanal
+    clima.ingresar_temperaturas()  # Ingresar las temperaturas
+    clima.mostrar_promedio()  # Mostrar el promedio semanal
+
+# Llamada a la función principal para ejecutar el programa
+if __name__ == "__main__":
+    main()
+
