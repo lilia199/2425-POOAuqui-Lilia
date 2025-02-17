@@ -1,0 +1,54 @@
+
+Interfaz de Usuario en la Consola
+
+def main():
+    inventario = Inventario()
+
+     Agregar productos al inventario
+    inventario.agregar_producto(Producto(1, "Manzana", 10, 1.50))
+    inventario.agregar_producto(Producto(2, "Banana", 20, 0.50))
+    inventario.agregar_producto(Producto(3, "Naranja", 15, 1.00))
+
+    while True:
+        print("Menú de opciones:")
+        print("1. Agregar producto")
+        print("2. Eliminar producto")
+        print("3. Actualizar cantidad")
+        print("4. Actualizar precio")
+        print("5. Buscar producto")
+        print("6. Mostrar productos")
+        print("7. Salir")
+
+        opcion = input("Ingrese una opción: ")
+
+        if opcion == "1":
+            id = int(input("Ingrese ID de producto: "))
+            nombre = input("Ingrese nombre de producto: ")
+            cantidad = int(input("Ingrese cantidad de producto: "))
+            precio = float(input("Ingrese precio de producto: "))
+            producto = Producto(id, nombre, cantidad, precio)
+            inventario.agregar_producto(producto)
+        elif opcion == "2":
+            id = int(input("Ingrese ID de producto a eliminar: "))
+            inventario.eliminar_producto(id)
+        elif opcion == "3":
+            id = int(input("Ingrese ID de producto a actualizar cantidad: "))
+            cantidad = int(input("Ingrese nueva cantidad: "))
+            inventario.actualizar_cantidad(id, cantidad)
+        elif opcion == "4":
+            id = int(input("Ingrese ID de producto a actualizar precio: "))
+            precio = float(input("Ingrese nuevo precio: "))
+            inventario.actualizar_precio(id, precio)
+        elif opcion == "5":
+            nombre = input("Ingrese nombre de producto a buscar: ")
+            inventario.buscar_producto(nombre)
+        elif opcion == "6":
+            inventario.mostrar_productos()
+        elif opcion == "7":
+            print("Hasta luego!")
+            break
+        else:
+            print("Opción inválida. Por favor, intente de nuevo.")
+
+if __name__ == "__main__":
+    main()
