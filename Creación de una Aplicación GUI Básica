@@ -1,0 +1,107 @@
+class AplicacionGUI:
+    def __init__(self, root):
+        self.root = root
+      
+
+self.root.title("Aplicación GUI Básica")
+       
+self.root.geometry("300x300")  Ajusta el tamaño de la ventana a 4x4
+       
+Crear menú
+        self.menu = tk.Menu(self.root)
+        self.root.config(menu=self.menu)
+
+         
+Menú de archivo
+        self.archivo_menu = tk.Menu(self.menu, tearoff=0)
+        self.menu.add_cascade(label="Archivo", menu=self.archivo_menu)
+        self.archivo_menu.add_command(label="Agregar", command=self.agregar)
+        self.archivo_menu.add_command(label="Limpiar", command=self.limpiar)
+        self.archivo_menu.add_separator()
+        self.archivo_menu.add_command(label="Salir", command=self.root.quit)
+
+       
+Componentes GUI
+        self.etiqueta = tk.Label(root, text="Ingrese información:")
+        self.etiqueta.pack()
+
+        self.entrada_texto = tk.Entry(root)
+        self.entrada_texto.pack()
+
+        self.boton_agregar = tk.Button(root, text="Agregar", command=self.agregar)
+        self.boton_agregar.pack()
+
+        self.boton_limpiar = tk.Button(root, text="Limpiar", command=self.limpiar)
+        self.boton_limpiar.pack()
+
+        self.lista = tk.Listbox(root)
+        self.lista.pack()
+
+    
+def agregar(self):
+        texto = self.entrada_texto.get()
+        if texto != "":
+            self.lista.insert(tk.END, texto)
+            self.entrada_texto.delete(0, tk.END)
+        else:
+            messagebox.showwarning("Advertencia", "El campo de texto está vacío.")
+
+  
+def limpiar(self):
+        self.lista.delete(0, tk.END)
+
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = AplicacionGUI(raiz)
+    raiz.bucle principal ()
+
+import tkinter as tk  
+from tkinter import messagebox  
+
+class Aplicacion:  
+    def __init__(self, master):  
+         Configuración de la ventana  
+        self.master = master  
+        master.title("Lista de Tareas")  
+
+         Etiqueta  
+        self.label = tk.Label(master, text="Ingrese una tarea:")  
+        self.label.pack()  
+
+         Campo de texto  
+        self.tarea_entry = tk.Entry(master)  
+        self.tarea_entry.pack()  
+
+         Botón "Agregar"  
+        self.agregar_button = tk.Button(master, text="Agregar", command=self.agregar_tarea)  
+        self.agregar_button.pack()  
+
+         Lista para mostrar las tareas  
+        self.lista_tareas = tk.Listbox(master)  
+        self.lista_tareas.pack()  
+
+        Botón "Limpiar"  
+        self.limpiar_button = tk.Button(master, text="Limpiar", command=self.limpiar_tarea)  
+        self.limpiar_button.pack()  
+
+    def agregar_tarea(self):  
+        tarea = self.tarea_entry.get()  
+        if tarea:  Verifica que no esté vacío  
+            self.lista_tareas.insert(tk.END, tarea)  #Agrega tarea a la lista  
+            self.tarea_entry.delete(0, tk.END)   Limpia el campo de texto  
+        else:  
+            messagebox.showwarning("Advertencia", "Por favor ingrese una tarea.")  
+
+    def limpiar_tarea(self):  
+        seleccion = self.lista_tareas.curselection()   Obtiene la selección  
+        if seleccion:  Verifica si hay un elemento seleccionado  
+            self.lista_tareas.delete(seleccion)  Elimina el elemento seleccionado  
+        else:  
+            messagebox.showwarning("Advertencia", "Por favor seleccione una tarea para limpiar.")  
+
+Ejecución de la aplicación  
+if __name__ == "__main__":  
+    root = tk.Tk()  
+    app = Aplicacion(root)  
+    root.mainloop()  
